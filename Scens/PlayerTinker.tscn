@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cs8x5n6wqoghh"]
+
+[ext_resource type="Script" uid="uid://dvihcrtjbyjf2" path="res://Scribts/PlayerMovement.cs" id="1_37hbc"]
+[ext_resource type="PackedScene" uid="uid://d4ldl17efoowj" path="res://Models/Player/WhiteSmallGuy/source/Beret & Moustache character.glb" id="2_tb808"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0a82b"]
+height = 1.66164
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_37hbc")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Tinkercad GLTF Scene" parent="Pivot" instance=ExtResource("2_tb808")]
+transform = Transform3D(-0.017795, 0, -1.55569e-09, 0, 0.017795, 0, 1.55569e-09, 0, -0.017795, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.44088, 0, 0, 0, 0.44088, 0, 0, 0, 0.44088, 0.0530003, 0.325964, -0.142216)
+shape = SubResource("CapsuleShape3D_0a82b")
+
+[node name="Head" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0717099, 0.950886, -0.506548)
+fov = 122.503

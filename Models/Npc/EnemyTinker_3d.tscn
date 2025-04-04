@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://issdjc2yasm2"]
+
+[ext_resource type="PackedScene" uid="uid://d4ldl17efoowj" path="res://Models/Player/WhiteSmallGuy/source/Beret & Moustache character.glb" id="1_q4spr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_fysa0"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.114923, 0, 0)
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Tinkercad GLTF Scene" parent="Pivot" instance=ExtResource("1_q4spr")]
+transform = Transform3D(-0.039, 0, -3.40949e-09, 0, 0.039, 0, 3.40949e-09, 0, -0.039, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127594, 1, -0.3)
+shape = SubResource("CapsuleShape3D_fysa0")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+transform = Transform3D(0.674238, 0, 0, 0, 1.2961, 0, 0, 0, 0.601881, -0.225338, 1.5227, -0.471806)
+aabb = AABB(-1.33237, -1.11076, -1.30669, 2.66474, 2.22153, 2.61338)
